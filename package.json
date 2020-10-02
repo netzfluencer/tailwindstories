@@ -2,6 +2,8 @@
   "name": "tailwindstories",
   "version": "0.1.0",
   "private": true,
+  "author": "Marvin Klimm",
+  "main": "./src/main.js",
   "scripts": {
     "lint": "vue-cli-service lint",
     "storybook": "start-storybook -p 6006",
