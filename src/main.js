@@ -1,8 +1,41 @@
-import Vue from 'vue';
-import App from './App.vue';
+import * as elements from './elements'
+import * as patterns from './patterns'
+import * as templates from './templates'
 
-Vue.config.productionTip = false;
+function installComponents(Vue, components) {
+  Object.keys(components).forEach((name) => {
+    Vue.component(name, components[name])
+  })
+}
 
-new Vue({
-  render: (h) => h(App),
-}).$mount('#app');
+const components = {
+  ...elements,
+  ...patterns,
+  ...templates,
+}
+
+let installed = false
+
+// // // // //
+// Exports
+// // // // //
+
+// Installation of the vue-component-library
+export function install(Vue) {
+  if (installed) {
+    console.warn('Not installed again: The library is already installed.')
+    return
+  }
+
+  installed = true
+  installComponents(Vue, components, {})
+}
+
+export default {
+  install,
+}
+
+// Components Export
+// export * from './elements'
+// export * from './patterns'
+// export * from './templates'
