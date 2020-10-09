@@ -21,13 +21,14 @@ let installed = false
 // // // // //
 
 // Installation of the vue-component-library
-export function install(Vue) {
+export function install(Vue, { useAllComponents }) {
   if (installed) {
     console.warn('Not installed again: The library is already installed.')
     return
   }
 
   installed = true
+  if (!useAllComponents) return
   installComponents(Vue, components, {})
 }
 
