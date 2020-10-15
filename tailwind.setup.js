@@ -45,7 +45,7 @@ module.exports = (conf) => {
         },
       },
       container: (theme) => ({
-      // padding and margin config for p*-c and -m*-c on different screensizes
+      // padding and margin config for px-c and -mx-c on different screensizes
         spacing: {
           xs: theme('spacing.4'),
           md: theme('spacing.6'),
@@ -56,7 +56,8 @@ module.exports = (conf) => {
         // padding and margin config for p*-box and -m*-box on different screensizes
         spacing: {
           xs: {
-            x: theme('container.spacing.xs'),
+            x: theme('spacing.4'),
+            y: theme('spacing.6'),
           },
         },
       }),
